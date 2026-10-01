@@ -1,1 +1,6 @@
-
+rul_project/
+├── config.py       # paths, column names, constants
+├── data.py         # loading, cleaning, RUL target, train/test prep
+├── model.py        # LightGBM model, hyperparameter search
+├── evaluate.py     # metrics + plots
+└── main.py         # entry point that wires everything together
