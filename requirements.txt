@@ -1,0 +1,69 @@
+# Requirements
+pandas>=2.0
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+lightgbm>=4.0
+xgboost>=2.0
+matplotlib>=3.7
+seaborn>=0.13
+
+## Data
+This project uses the **NASA C-MAPSS** (Commercial Modular Aero-Propulsion
+System Simulation) Turbofan Engine Degradation dataset, subset **FD001**.
+
+> Dataset: Saxena, A., Goebel, D., Simon, D., & Eklund, N. (2008).
+> Damage Propagation Modeling for Aircraft Engine Run-to-Failure Simulation.
+> Proceedings of the International Conference on Prognostics and Health Management, NASA.
+
+The dataset is **not included** in this repository. Download it and place the
+files in a `data/` folder at the repo root.
+### Option 1 — Kaggle (recommended)
+
+1. Download from: https://www.kaggle.com/datasets/behrad3d/nasa-c-maps
+   (or search Kaggle for "NASA C-MAPSS")
+2. Extract `train_FD001.txt`, `test_FD001.txt`, and `RUL_FD001.txt`
+3. Place them in the `data/` directory:
+
+```text
+repo-root/
+└── data/
+    ├── train_FD001.txt
+    ├── test_FD001.txt
+    └── RUL_FD001.txt
+
+# Or via the Kaggle CLI:
+Copy
+pip install kaggle
+kaggle datasets download -d behrad3d/nasa-c-maps -p data --unzip
+
+# Option 2 — NASA official archive
+https://data.nasa.gov/dataset/C-MAPSS — locate CMAPSSData.zip,
+download, and extract the three FD001 text files into data/.
+Then point the config at the data
+Update paths in src/config.py if your layout differs:
+TRAIN_PATH = "data/train_FD001.txt"
+TEST_PATH  = "data/test_FD001.txt"
+RUL_PATH   = "data/RUL_FD001.txt"
+
+#Setup
+pip install -r requirements.txt
+python src/main.py
+
+**Two notes:**
+
+1. My canvas modules use relative paths like `data/train_FD001.txt` — they assume you run `python main.py` 
+    from the repo root with data there, or from `src/` with data one level up. Pick one convention 
+    and state it in the README; the snippet above assumes repo-root execution, 
+    in which case change the config paths to `"data/train_FD001.txt"` and keep them as-is.
+
+2. Keep `data/*.txt` in `.gitignore` as planned — the README download section is your compliance-friendly substitute for shipping the data.
+
+
+
+
+
+
+
+
+
