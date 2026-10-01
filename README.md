@@ -26,6 +26,7 @@ against the ground truth `RUL_FD001`.
 4. **Baseline comparison** — Random Forest, LightGBM, and XGBoost on
    identical snapshot features, no feature scaling (trees are invariant to
    monotonic transformations):
+
    Model | RMSE | R² |
  |---|---|---|
  | Random Forest | 17.23 | 0.815 |
@@ -34,12 +35,12 @@ against the ground truth `RUL_FD001`.
 
    LightGBM was selected for hyperparameter tuning.
 
-5. **Leakage-free tuning** — hyperparameter search with
+6. **Leakage-free tuning** — hyperparameter search with
    `RandomizedSearchCV` + **`GroupKFold`** (grouped by engine unit). Plain
    row-random CV would place cycles from the *same engine* in both train and
    validation folds, inflating scores; grouping keeps every engine entirely
    within one fold.
-6. **Final evaluation** — the tuned model is evaluated once on the official
+7. **Final evaluation** — the tuned model is evaluated once on the official
    held-out test set, with per-unit trajectory plots for diagnostics.
 
 ## Results
