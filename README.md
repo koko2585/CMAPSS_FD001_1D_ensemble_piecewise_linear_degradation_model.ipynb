@@ -45,10 +45,9 @@ against the ground truth `RUL_FD001`.
 
 ## Results
 
-<!-- Fill with your tuned numbers -->
  | Model | MAE | RMSE | R² |
  |---|---|---|---|
- | LightGBM (tuned, GroupKFold CV) | ... | ... | ... |
+ | LightGBM (tuned, GroupKFold CV) |  11.91 | 16.97 | 0.821 |
 
 ## Repository structure
 
