@@ -1,4 +1,5 @@
 rul_project/
+├── data 			      # directory for data
 ├── config.py       # paths, column names, constants
 ├── data.py         # loading, cleaning, RUL target, train/test prep
 ├── model.py        # LightGBM model, hyperparameter search
