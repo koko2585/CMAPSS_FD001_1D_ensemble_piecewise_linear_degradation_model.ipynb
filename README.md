@@ -28,9 +28,13 @@ against the ground truth `RUL_FD001`.
    monotonic transformations):
 
    Model | RMSE | R² |
+   
  |---|---|---|
+ 
  | Random Forest | 17.23 | 0.815 |
+ 
  | **LightGBM** | **16.99** | **0.820** |
+ 
  | XGBoost | 17.05 | 0.819 |
 
    LightGBM was selected for hyperparameter tuning.
